@@ -60,6 +60,10 @@ class ApplicationController < Sinatra::Base
     artist = Artist.find(params[:id])
     artist.to_json
   end
+  get "/artists/:id/fullsets" do
+    artist = Artist.find(params[:id])
+    artist.fullsets.to_json
+  end
   # ========================
 
 
@@ -73,6 +77,10 @@ class ApplicationController < Sinatra::Base
     genre = Genre.find(params[:id])
     genre.to_json
   end
+  get "/genres/:id/fullsets" do
+    genre = Genre.find(params[:id])
+    genre.fullsets.to_json
+  end
   # ========================
 
 
@@ -85,6 +93,10 @@ class ApplicationController < Sinatra::Base
   get "/events/:id" do
     event = Event.find(params[:id])
     event.to_json
+  end
+  get "/events/:id/fullsets" do
+    event = Event.find(params[:id])
+    event.fullsets.to_json
   end
   # ========================
 
