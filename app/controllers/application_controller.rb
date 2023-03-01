@@ -26,6 +26,20 @@ class ApplicationController < Sinatra::Base
     fullset.to_json
   end
   # ----------
+  # PATCH
+  patch "/fullsets/:id" do
+    fullset = Fullset.find(params[:id])
+    fullset.update(
+      id: params[:id],
+      title: params[:title],
+      rating: params[:rating],
+      video_link: params[:video_link],
+      artist_id: params[:artist_id],
+      event_id: params[:event_id]
+    )
+    fullset.to_json
+  end
+    # ----------
   # DELETE
   delete "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
