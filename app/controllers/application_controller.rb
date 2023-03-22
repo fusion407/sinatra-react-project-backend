@@ -21,7 +21,8 @@ class ApplicationController < Sinatra::Base
       rating: params[:rating],
       video_link: params[:video_link],
       artist_id: params[:artist_id],
-      event_id: params[:event_id]
+      event_id: params[:event_id],
+      genre_id: params[:genre_id]
     )
     fullset.to_json
   end
@@ -64,11 +65,21 @@ class ApplicationController < Sinatra::Base
     artist = Artist.find(params[:id])
     artist.fullsets.to_json
   end
+  # ----------
+  # POST
+  post "/artists" do
+    artist = Artist.create(
+      name: params[:name],
+      genre_id: params[:genre_id]
+    )
+    artist.to_json
+  end
   # ========================
 
 
   # Genres
   # ========================
+  # GET
   get "/genres" do
     genres = Genre.all.order(:id)
     genres.to_json
@@ -81,11 +92,20 @@ class ApplicationController < Sinatra::Base
     genre = Genre.find(params[:id])
     genre.fullsets.to_json
   end
+  # ----------
+  # POST
+  post "/genres" do
+    genre = Genre.create(
+      name: params[:name]
+    )
+    genre.to_json
+  end
   # ========================
 
 
   # Events
   # ========================
+  # GET
   get "/events" do
     events = Event.all.order(:id)
     events.to_json
@@ -97,6 +117,15 @@ class ApplicationController < Sinatra::Base
   get "/events/:id/fullsets" do
     event = Event.find(params[:id])
     event.fullsets.to_json
+  end
+  # ----------
+  # POST
+  post "/events" do
+    event = Event.create(
+      name: params[:name],
+      location: params[:location]
+    )
+    event.to_json
   end
   # ========================
 

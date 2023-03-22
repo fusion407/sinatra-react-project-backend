@@ -6,6 +6,7 @@ class CreateFullsets < ActiveRecord::Migration[6.1]
       t.string :video_link
       t.integer :artist_id
       t.integer :event_id
+      t.integer :genre_id
       t.timestamps
     end
   end

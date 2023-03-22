@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2023_03_01_015816) do
     t.string "video_link"
     t.integer "artist_id"
     t.integer "event_id"
+    t.integer "genre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "genres", force: :cascade do |t|
