@@ -7,6 +7,7 @@ class CreateFullsets < ActiveRecord::Migration[6.1]
       t.integer :artist_id
       t.integer :event_id
       t.integer :genre_id
+      t.integer :location_id
       t.timestamps
     end
   end

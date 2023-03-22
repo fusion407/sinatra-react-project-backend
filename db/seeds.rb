@@ -8,6 +8,7 @@ Fullset.create([
         artist_id: 1,
         event_id: 1,
         genre_id: 1,
+        location_id: 1,
     },
     {
         title: "Deadmau5 EDC Las Vegas 2021",
@@ -16,6 +17,8 @@ Fullset.create([
         artist_id: 2,
         event_id: 2,
         genre_id: 2,
+        location_id: 2,
+
     }
 ])
 Artist.create([
@@ -32,21 +35,30 @@ Artist.create([
 ])
 Genre.create([
     {
-        name: "Dubstep"
+        name: "Dubstep",
     },
     {
-        name: "Progressive House"
+        name: "Progressive House",
     }
 ])
 Event.create([
     {
         name: "Lost Lands 2022",
-        location: "Thornville, OH"
+        location_id: 1,
     },
     {
         name: "EDC 2021",
-        location: "Las Vegas, NV"
+        location_id: 2,
     }
 ])
+Location.create([
+    {
+        name: "Thornville, OH",
+    },
+    {
+        name: "Las Vegas, NV",
+    }
+])
+
 
 puts "✅ Done seeding!"

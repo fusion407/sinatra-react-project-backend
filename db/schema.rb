@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_01_015816) do
+ActiveRecord::Schema.define(version: 2023_03_22_204916) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2023_03_01_015816) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.string "location"
+    t.integer "location_id"
   end
 
   create_table "fullsets", force: :cascade do |t|
@@ -29,11 +29,16 @@ ActiveRecord::Schema.define(version: 2023_03_01_015816) do
     t.integer "artist_id"
     t.integer "event_id"
     t.integer "genre_id"
+    t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "locations", force: :cascade do |t|
     t.string "name"
   end
 
