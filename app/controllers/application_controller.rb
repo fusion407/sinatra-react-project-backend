@@ -22,7 +22,8 @@ class ApplicationController < Sinatra::Base
       video_link: params[:video_link],
       artist_id: params[:artist_id],
       event_id: params[:event_id],
-      genre_id: params[:genre_id]
+      genre_id: params[:genre_id],
+      location_id: params[:location_id]
     )
     fullset.to_json
   end
