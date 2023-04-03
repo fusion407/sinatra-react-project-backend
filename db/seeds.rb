@@ -24,13 +24,15 @@ Fullset.create([
 Artist.create([
     {
         name: "Excision",
-        genre_id: 1,
-
+        genre_id: 1
     },
     {
         name: "Deadmau5",
-        genre_id: 2,
-
+        genre_id: 2
+    },
+    {
+        name: "Herobust",
+        genre_id: 1
     }
 ])
 Genre.create([

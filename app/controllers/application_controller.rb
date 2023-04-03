@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
   # GET
   get "/fullsets" do
     fullsets = Fullset.all.order(:created_at)
-    render json: fullsets.to_json(include: [:artist, :event, :genre, :location])
+    fullsets.to_json(include: [:artist, :event, :genre, :location])
   end
   get "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
@@ -56,7 +56,7 @@ class ApplicationController < Sinatra::Base
   # GET
   get "/artists" do
     artists = Artist.all.order(:id)
-    artists.to_json
+    artists.to_json(include: [:genre])
   end
   get "/artists/:id" do
     artist = Artist.find(params[:id])
@@ -109,7 +109,7 @@ class ApplicationController < Sinatra::Base
   # GET
   get "/events" do
     events = Event.all.order(:id)
-    events.to_json
+    events.to_json(include: [:location])
   end
   get "/events/:id" do
     event = Event.find(params[:id])
@@ -129,5 +129,10 @@ class ApplicationController < Sinatra::Base
     event.to_json
   end
   # ========================
+
+  get "/locations" do
+    locations = Location.all.order(:id)
+    locations.to_json
+  end
 
 end

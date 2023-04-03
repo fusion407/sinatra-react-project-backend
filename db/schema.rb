@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_03_194237) do
+ActiveRecord::Schema.define(version: 2023_04_03_203030) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.integer "genre_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.integer "location_id"
-    t.integer "artist_id"
   end
 
   create_table "fullsets", force: :cascade do |t|
