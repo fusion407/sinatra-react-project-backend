@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
   # GET
   get "/fullsets" do
     fullsets = Fullset.all.order(:created_at)
-    fullsets.to_json
+    render json: fullsets.to_json(include: [:artist, :event, :genre, :location])
   end
   get "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
