@@ -55,17 +55,16 @@ class ApplicationController < Sinatra::Base
 
   get "/artists" do
     artists = Artist.all.order(:id)
-    artists.to_json(include: [:genre])
+    artists.to_json
   end
   get "/artists/:id" do
     artist = Artist.find(params[:id])
-    artist.to_json(include: [:genre])
+    artist.to_json
   end
 
   post "/artists" do
     artist = Artist.create(
       name: params[:name],
-      genre_id: params[:genre_id]
     )
     artist.to_json
   end
@@ -105,6 +104,17 @@ class ApplicationController < Sinatra::Base
   get "/locations" do
     locations = Location.all.order(:id)
     locations.to_json
+  end
+  get "/locations/:id" do
+    location = Location.find(params[:id])
+    location.to_json
+  end
+
+  post "/locations" do
+    event = Event.create(
+      name: params[:name]
+    )
+    event.to_json
   end
 
 end
