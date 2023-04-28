@@ -5,12 +5,12 @@ class ApplicationController < Sinatra::Base
   # Fullsets
 
   get "/fullsets" do
-    fullsets = Fullset.all.order(:created_at)
+    fullsets = Fullset.all.order(params[:id])
     fullsets.to_json(include: [:artist, event: {include: :location}])
   end
   get "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
-    fullset.to_json(include: [:artist, :event])
+    fullset.to_json(include: [:artist, event: {include: :location}])
   end
 
 
@@ -57,17 +57,23 @@ class ApplicationController < Sinatra::Base
     artists = Artist.all.order(:id)
     artists.to_json
   end
-  get "/artists/:id" do
-    artist = Artist.find(params[:id])
+  get "/artists/:name" do
+    name = params['name']
+    artist = Artist.find_by(name: name)
+    if artist.nil?
+      artist = Artist.create(
+        name: name
+      )
+    end
     artist.to_json
   end
 
-  post "/artists" do
-    artist = Artist.create(
-      name: params[:name],
-    )
-    artist.to_json
-  end
+  # post "/artists" do
+  #   artist = Artist.create(
+  #     name: params[:name],
+  #   )
+  #   artist.to_json
+  # end
 
 
 
@@ -81,19 +87,25 @@ class ApplicationController < Sinatra::Base
     events = Event.all.order(:id)
     events.to_json(include: [:location])
   end
-  get "/events/:id" do
-    event = Event.find(params[:id])
-    event.to_json(include: [:location])
-  end
-
-
-  post "/events" do
-    event = Event.create(
-      name: params[:name],
-      location: params[:location]
-    )
+  get "/events/:name" do
+    name = params['name']
+    event = Event.find_by(name: name)
+    if event.nil?
+      event = Event.create(
+        name: name
+      )
+    end
     event.to_json
   end
+
+
+  # post "/events" do
+  #   event = Event.create(
+  #     name: params[:name],
+  #     location: params[:location]
+  #   )
+  #   event.to_json
+  # end
 
 
   # ========================
@@ -105,16 +117,22 @@ class ApplicationController < Sinatra::Base
     locations = Location.all.order(:id)
     locations.to_json
   end
-  get "/locations/:id" do
-    location = Location.find(params[:id])
+  get "/locations/:name" do
+    name = params['name']
+    location = Location.find_by(name: name)
+    if location.nil?
+      location = Location.create(
+        name: name
+      )
+    end
     location.to_json
   end
 
-  post "/locations" do
-    event = Event.create(
-      name: params[:name]
-    )
-    event.to_json
-  end
+  # post "/locations" do
+  #   event = Event.create(
+  #     name: params[:name]
+  #   )
+  #   event.to_json
+  # end
 
 end
