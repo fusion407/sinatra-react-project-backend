@@ -7,6 +7,7 @@ Fullset.create([
         video_link: "https://www.youtube.com/watch?v=_XsLl8yLpq4",
         artist_id: 1,
         event_id: 1,
+        location_id: 1,
     },
     {
         title: "Deadmau5 EDC Las Vegas 2021",
@@ -14,6 +15,7 @@ Fullset.create([
         video_link: "https://www.youtube.com/watch?v=AjiSzMFEDgo",
         artist_id: 2,
         event_id: 2,
+        location_id: 2,
 
     },
     {
@@ -22,6 +24,7 @@ Fullset.create([
         video_link: "https://youtu.be/IkKCv2auOpw",
         artist_id: 7,
         event_id: 1,
+        location_id: 1,
     },
     {
         title: "Herobust Lost Lands 2022",
@@ -29,6 +32,7 @@ Fullset.create([
         video_link: "https://youtu.be/IkKCv2auOpw",
         artist_id: 3,
         event_id: 1,
+        location_id: 1,
     },
 ])
 Artist.create([
@@ -88,11 +92,9 @@ Artist.create([
 Event.create([
     {
         name: "Lost Lands 2022",
-        location_id: 1,
     },
     {
         name: "EDC Las Vegas 2021",
-        location_id: 2,
     }
 ])
 Location.create([
