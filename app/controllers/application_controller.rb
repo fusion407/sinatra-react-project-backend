@@ -34,11 +34,8 @@ class ApplicationController < Sinatra::Base
       title: params[:title],
       rating: params[:rating],
       video_link: params[:video_link],
-      # artist: params[:artist],
       artist_id: params[:artist_id],
-      # event: params[:event],
       event_id: params[:event_id],
-      # location: params[:location],
       location_id: params[:location_id]
     )
     fullset.to_json(:include => [:artist, :event, :location])
