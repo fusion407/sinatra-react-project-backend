@@ -34,10 +34,14 @@ class ApplicationController < Sinatra::Base
       title: params[:title],
       rating: params[:rating],
       video_link: params[:video_link],
+      # artist: params[:artist],
       artist_id: params[:artist_id],
-      event_id: params[:event_id]
+      # event: params[:event],
+      event_id: params[:event_id],
+      # location: params[:location],
+      location_id: params[:location_id]
     )
-    fullset.to_json
+    fullset.to_json(:include => [:artist, :event, :location])
   end
 
 
@@ -55,7 +59,7 @@ class ApplicationController < Sinatra::Base
   # Artists
 
   get "/artists" do
-    artists = Artist.all.order(:id)
+    artists = Artist.all.order(:name)
     artists.to_json
   end
   get "/artists/:name" do
@@ -85,7 +89,7 @@ class ApplicationController < Sinatra::Base
   # Events
 
   get "/events" do
-    events = Event.all.order(:id)
+    events = Event.all.order(:name)
     events.to_json
   end
   get "/events/:name" do
@@ -115,7 +119,7 @@ class ApplicationController < Sinatra::Base
   # Locations 
   
   get "/locations" do
-    locations = Location.all.order(:id)
+    locations = Location.all.order(:name)
     locations.to_json
   end
   get "/locations/:name" do
