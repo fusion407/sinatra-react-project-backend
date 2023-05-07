@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
       event_id: params[:event_id],
       location_id: params[:location_id]
     )
-    fullset.to_json
+    fullset.to_json(:include => [:artist, :event, :location])
   end
 
 
