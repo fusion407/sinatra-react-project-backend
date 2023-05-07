@@ -70,12 +70,12 @@ class ApplicationController < Sinatra::Base
     artist.to_json
   end
 
-  # post "/artists" do
-  #   artist = Artist.create(
-  #     name: params[:name],
-  #   )
-  #   artist.to_json
-  # end
+  post "/artists" do
+    artist = Artist.create(
+      name: params[:name],
+    )
+    artist.to_json
+  end
 
 
 
@@ -89,25 +89,14 @@ class ApplicationController < Sinatra::Base
     events = Event.all.order(:name)
     events.to_json
   end
-  get "/events/:name" do
-    name = params['name']
-    event = Event.find_by(name: name)
-    if event.nil?
-      event = Event.create(
-        name: name
-      )
-    end
+
+
+  post "/events" do
+    event = Event.create(
+      name: params[:name]
+    )
     event.to_json
   end
-
-
-  # post "/events" do
-  #   event = Event.create(
-  #     name: params[:name],
-  #     location: params[:location]
-  #   )
-  #   event.to_json
-  # end
 
 
   # ========================
@@ -119,22 +108,13 @@ class ApplicationController < Sinatra::Base
     locations = Location.all.order(:name)
     locations.to_json
   end
-  get "/locations/:name" do
-    name = params['name']
-    location = Location.find_by(name: name)
-    if location.nil?
-      location = Location.create(
-        name: name
-      )
-    end
+
+
+  post "/locations" do
+    location = Location.create(
+      name: params[:name]
+    )
     location.to_json
   end
-
-  # post "/locations" do
-  #   event = Event.create(
-  #     name: params[:name]
-  #   )
-  #   event.to_json
-  # end
 
 end
