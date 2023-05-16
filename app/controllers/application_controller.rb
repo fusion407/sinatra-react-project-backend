@@ -2,17 +2,15 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
 
-  # Fullsets
-
   get "/fullsets" do
     fullsets = Fullset.all.order(:title)
     fullsets.to_json(:include => [:artist, :event, :location])
   end
+
   get "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
     fullset.to_json
   end
-
 
   post "/fullsets" do
     fullset = Fullset.create(
@@ -25,7 +23,6 @@ class ApplicationController < Sinatra::Base
     )
     fullset.to_json(:include => [:artist, :event, :location])
   end
-
 
   patch "/fullsets/:id" do
     fullset = Fullset.find(params[:id])
@@ -50,15 +47,14 @@ class ApplicationController < Sinatra::Base
 
 
 
-  # ========================
 
 
-  # Artists
 
   get "/artists" do
     artists = Artist.all.order(:name)
     artists.to_json
   end
+
   get "/artists/:name" do
     name = params['name']
     artist = Artist.find_by(name: name)
@@ -80,16 +76,11 @@ class ApplicationController < Sinatra::Base
 
 
 
-  # ========================
-
-
-  # Events
 
   get "/events" do
     events = Event.all.order(:name)
     events.to_json
   end
-
 
   post "/events" do
     event = Event.create(
@@ -105,10 +96,7 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  # ========================
 
-
-  # Locations 
   
   get "/locations" do
     locations = Location.all.order(:name)
@@ -129,4 +117,5 @@ class ApplicationController < Sinatra::Base
     location.to_json
   end
 
+  
 end
