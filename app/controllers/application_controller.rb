@@ -7,11 +7,6 @@ class ApplicationController < Sinatra::Base
     fullsets.to_json(:include => [:artist, :event, :location])
   end
 
-  get "/fullsets/:id" do
-    fullset = Fullset.find(params[:id])
-    fullset.to_json
-  end
-
   post "/fullsets" do
     fullset = Fullset.create(
       title: params[:title],
@@ -55,17 +50,6 @@ class ApplicationController < Sinatra::Base
     artists.to_json
   end
 
-  get "/artists/:name" do
-    name = params['name']
-    artist = Artist.find_by(name: name)
-    if artist.nil?
-      artist = Artist.create(
-        name: name
-      )
-    end
-    artist.to_json
-  end
-
   post "/artists" do
     artist = Artist.create(
       name: params[:name],
@@ -103,7 +87,6 @@ class ApplicationController < Sinatra::Base
     locations.to_json
   end
 
-
   post "/locations" do
     location = Location.create(
       name: params[:name]
@@ -117,5 +100,5 @@ class ApplicationController < Sinatra::Base
     location.to_json
   end
 
-  
+
 end
