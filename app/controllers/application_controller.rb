@@ -5,7 +5,7 @@ class ApplicationController < Sinatra::Base
   # Fullsets
 
   get "/fullsets" do
-    fullsets = Fullset.all.order(params[:id])
+    fullsets = Fullset.all.order(:title)
     fullsets.to_json(:include => [:artist, :event, :location])
   end
   get "/fullsets/:id" do
@@ -98,6 +98,12 @@ class ApplicationController < Sinatra::Base
     event.to_json
   end
 
+  delete "/events/:id" do
+    event = Event.find(params[:id])
+    event.destroy
+    event.to_json
+  end
+
 
   # ========================
 
@@ -114,6 +120,12 @@ class ApplicationController < Sinatra::Base
     location = Location.create(
       name: params[:name]
     )
+    location.to_json
+  end
+
+  delete "/locations/:id" do
+    location = Location.find(params[:id])
+    location.destroy
     location.to_json
   end
 

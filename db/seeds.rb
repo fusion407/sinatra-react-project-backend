@@ -22,7 +22,7 @@ Fullset.create([
         title: "ATLiens Lost Lands 2022",
         rating: 4,
         video_link: "https://youtu.be/IkKCv2auOpw",
-        artist_id: 7,
+        artist_id: 4,
         event_id: 1,
         location_id: 1,
     },
@@ -46,55 +46,16 @@ Artist.create([
         name: "Herobust",
     },
     {
-        name: "Illenium",
-    },
-    {
-        name: "Ray Volpe",
-    },
-    {
-        name: "Rezz",
-    },
-    {
         name: "ATLiens",
-    },
-    {
-        name: "Madeon",
-    },
-    {
-        name: "Sullivan King",
-    },
-    {
-        name: "Slander",
-    },
-    {
-        name: "Nghtmare",
-    },
-    {
-        name: "Excision b2b Sullivan King",
-    },
-    {
-        name: "Barely Alive",
-    },
-    {
-        name: "Porter Robinson",
-    },
-    {
-        name: "Jauz",
-    },
-    {
-        name: "Svdden Death",
-    },
-    {
-        name: "Subtronics",
-    },
+    }
 ])
 
 Event.create([
     {
-        name: "Lost Lands 2022",
+        name: "Lost Lands",
     },
     {
-        name: "EDC Las Vegas 2021",
+        name: "EDC Las Vegas",
     }
 ])
 Location.create([
