@@ -57,6 +57,11 @@ class ApplicationController < Sinatra::Base
     artist.to_json
   end
 
+  delete "/artists/:id" do
+    artist = Artist.find(params[:id])
+    artist.destroy
+    artist.to_json
+  end
 
 
 
