@@ -4,7 +4,7 @@
 
 This project was completed in attendance with Flatiron School as my phase 3 project.
 
-The goal for this project was to create a backend with Ruby Sinatra and Active Record, as well as create a frontend with ReactJS to communicate with the database.
+The goal for this project was to create a backend with Ruby Sinatra and Active Record, as well as create a frontend with ReactJS to communicate with the database. This is the backend part of my project.
 
 Link to frontend repository: https://github.com/fusion407/sinatra-react-project-frontend
 
