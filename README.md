@@ -6,9 +6,11 @@ This project was completed in attendance with Flatiron School as my phase 3 proj
 
 The goal for this project was to create a backend with Ruby Sinatra and Active Record.
 
-My frontend was created with ReactJS.
-
 Link to frontend repository: https://github.com/fusion407/sinatra-react-project-frontend
+
+Blog: https://dev.to/fusion407/edm-concert-api-creating-a-full-stack-application-with-rubys-sinatra-and-reactjs-m2o
+
+Video: https://youtu.be/rKcGp0uN3WQ
 
 
 ## Routes and Models
@@ -27,7 +29,7 @@ DELETE - '/fullsets/:id' - Deletes item from the database.
 
 Schema:
 
-...
+```
   {
     "id": 1,
     "title": "Excision Lost Lands 2022 Detox Set",
@@ -51,7 +53,7 @@ Schema:
       "name": "Thornville, OH"
     }
   }
-...
+```
 
 ------------------
 
