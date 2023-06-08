@@ -25,7 +25,7 @@ POST - '/fullsets' - Creates data for the newly created set.
 
 PATCH - '/fullsets/:id' - Updates selected set with new values.
 
-DELETE - '/fullsets/:id' - Deletes item from the database.
+DELETE - '/fullsets/:id' - Deletes set from the database.
 
 Schema:
 
@@ -63,7 +63,7 @@ GET - '/artists' - Returns every existing artist.
 
 POST - '/artists' - Adds new artist.
 
-DELETE - '/artists/:id'
+DELETE - '/artists/:id' - Deletes artist from the database.
 
 Schema:
 
@@ -82,7 +82,7 @@ GET - '/events' - Returns every existing event.
 
 POST - '/events' - Adds new event.
 
-DELETE - '/events/:id' - Deletes item from the database.
+DELETE - '/events/:id' - Deletes event from the database.
 
 Schema:
 
@@ -101,7 +101,7 @@ Schema:
 
 '/locations' - Adds new location.
 
-'/locations/:id' - Deletes item from the database.
+'/locations/:id' - Deletes location from the database.
 
 Schema:
 
