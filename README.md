@@ -27,6 +27,7 @@ DELETE - '/fullsets/:id' - Deletes item from the database.
 
 Schema:
 
+...
   {
     "id": 1,
     "title": "Excision Lost Lands 2022 Detox Set",
@@ -50,6 +51,7 @@ Schema:
       "name": "Thornville, OH"
     }
   }
+...
 
 ------------------
 
@@ -63,10 +65,12 @@ DELETE - '/artists/:id'
 
 Schema:
 
+...
   {
     "id": 1,
     "name": "Excision"
   }
+...
 
 ------------------
 
@@ -80,10 +84,12 @@ DELETE - '/events/:id' - Deletes item from the database.
 
 Schema:
 
+...
   {
     "id": 1,
     "name": "Lost Lands"
   }
+...
 
 ------------------
 
@@ -96,9 +102,12 @@ Schema:
 '/locations/:id' - Deletes item from the database.
 
 Schema:
+
+...
   {
     "id": 1,
     "name": "Thornville, OH"
   },
+...
 
 ------------------
