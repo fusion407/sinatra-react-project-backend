@@ -65,12 +65,12 @@ DELETE - '/artists/:id'
 
 Schema:
 
-...
+```
   {
     "id": 1,
     "name": "Excision"
   }
-...
+```
 
 ------------------
 
@@ -84,12 +84,12 @@ DELETE - '/events/:id' - Deletes item from the database.
 
 Schema:
 
-...
+```
   {
     "id": 1,
     "name": "Lost Lands"
   }
-...
+```
 
 ------------------
 
@@ -103,11 +103,11 @@ Schema:
 
 Schema:
 
-...
+```
   {
     "id": 1,
     "name": "Thornville, OH"
   },
-...
+```
 
 ------------------
