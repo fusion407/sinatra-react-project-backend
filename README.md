@@ -1,4 +1,4 @@
-# EDM (Electronic Dance Music) Concert API
+# EDM (Electronic Dance Music) Concert Set API
 
 ## Introduction
 
