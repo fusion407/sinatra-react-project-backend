@@ -23,8 +23,6 @@ Then run `bundle exec rake server` to start the server which will be hosted on p
 
 ### Fullsets
 
-This model shows the full data set, sharing a one to many relationship with the other 3 models.
-
 GET - '/fullsets' - Returns all data for each set in the database.
 
 POST - '/fullsets' - Creates data for the newly created set.
