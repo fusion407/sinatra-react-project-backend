@@ -13,6 +13,12 @@ Blog: https://dev.to/fusion407/edm-concert-api-creating-a-full-stack-application
 Video: https://youtu.be/rKcGp0uN3WQ
 
 
+## Usage
+Fork and clone this repository, run `bundle install` in your console to install all required gems.
+
+Then run `bundle exec rake server` to start the server which will be hosted on port 9292. Ex: (localhost:9292/fullsets)
+
+
 ## Routes and Models
 
 ### Fullsets
